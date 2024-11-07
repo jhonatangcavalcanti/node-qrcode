@@ -13,10 +13,12 @@
     "canvas",
     "qrcode"
   ],
-  "main": "./build/qrcode.js",
-  "browser": {
-    "./lib/index.js": "./build/qrcode.js",
-    "fs": false
+  "main": "./build/qrcode-node.js",
+  "exports": {
+    ".": {
+      "browser": "./build/qrcode-browser.js",
+      "default": "./build/qrcode-node.js"
+    }
   },
   "files": [
     "bin",
