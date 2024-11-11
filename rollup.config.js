@@ -11,9 +11,10 @@ const babelConfig = {
 export default [{
   input: 'lib/browser.js',
   output: { file: 'build/qrcode-browser.js', format: 'umd', name: 'QRCode', exports: 'named' },
-  plugins: [commonjs(), resolve({ browser: true }), babel(babelConfig), terser()]
+  plugins: [resolve({ browser: true }), commonjs(), babel(babelConfig), terser()]
 }, {
   input: 'lib/index.js',
-  output: { file: 'build/qrcode-node.js', format: 'umd', name: 'QRCode', exports: 'named' },
-  plugins: [commonjs(), resolve({ browser: false, preferBuiltins: true }), babel(babelConfig), terser()]
+  output: { file: 'build/qrcode-node.js', format: 'cjs', name: 'QRCode', exports: 'named' },
+  plugins: [resolve({ browser: true, preferBuiltins: true }), commonjs(), babel(babelConfig), terser()],
+  external: ['fs', 'stream', 'util', 'zlib', 'buffer', 'assert']
 }]
