@@ -13,7 +13,7 @@
     "canvas",
     "qrcode"
   ],
-  "main": "./build/qrcode.js",
+  "main": "./lib/index.js",
   "browser": {
     "./lib/index.js": "./build/qrcode.js",
     "fs": false
