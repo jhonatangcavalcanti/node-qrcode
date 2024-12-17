@@ -18,6 +18,12 @@
     "./lib/index.js": "./build/qrcode.js",
     "fs": false
   },
+  "exports": {
+    ".": {
+      "browser": "./build/qrcode.js",
+      "default": "./lib/index.js"
+    }
+  },
   "files": [
     "bin",
     "build",
